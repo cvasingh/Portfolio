@@ -1,11 +1,11 @@
 html {
   --section-background-color: linear-gradient(to bottom left,
-      rgba(17, 16, 16, 0.582),
-      rgba(12, 8, 24, 0.904));
+      #11101094,
+      #092319e7);
 
   --image-gradient: linear-gradient(to bottom left,
-      rgba(17, 16, 16, 0.678),
-      rgba(12, 10, 22, 0.863));
+      #111010ad,
+      #152720dc);
 
   --imp-text-color: #02e18b;
 }
@@ -270,10 +270,10 @@ button:focus {
   position: relative;
   z-index: -1;
   background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  padding: 30px 0 !important;
 }
 
 .home-content {
@@ -332,6 +332,7 @@ button:focus {
 }
 
 .home-about-section {
+  background-image: var(--section-background-color) !important;
   position: relative;
   padding-bottom: 70px !important;
   padding-top: 70px !important;
@@ -385,7 +386,7 @@ button:focus {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #68187a;
+  background: #02e18b;
   transition: 0.5s;
   transform: scale(0.9);
   z-index: -1;
@@ -416,7 +417,7 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
+  background-color: #073020;
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important;
@@ -572,7 +573,7 @@ button:focus {
 
 .tech-icons {
   font-size: 4.5em !important;
-  margin: 15px !important;
+  margin: 15px 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
   border: 1.7px solid #87d2b5a2 !important;
@@ -592,9 +593,11 @@ button:focus {
 }
 
 .tech-icons:hover {
+  margin: 12px 15px !important;
   transform: scale(1.05) !important;
   overflow: hidden !important;
-  border: 2.2px solid #3bc590e1 !important;
+  border: 2px solid #3bc590e1 !important;
+  box-shadow: 4px 5px 4px 3px #038c5823 !important;
 }
 
 .tech-icon-images {
@@ -715,8 +718,8 @@ button:focus {
 }
 
 .like-btn {
-  background-color: #934cce5e !important;
-  border-color: #934cce5e !important;
+  background-color: #4becae !important;
+  border-color: #35db9b5e !important;
   padding: 0.25rem 0.98rem !important;
   border-radius: 5px !important;
   line-height: 1.4 !important;

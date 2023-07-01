@@ -6,6 +6,10 @@ function Particle() {
     <Particles
       id="tsparticles"
       params={{
+        fullScreen: {
+          enable: false,
+          zIndex: -1
+        },
         particles: {
           number: {
             value: 160,
@@ -15,12 +19,25 @@ function Particle() {
             },
           },
           line_linked: {
-            enable: false,
-            opacity: 0.03,
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.1,
+            width: 0.5
           },
           move: {
-            direction: "right",
+            enable: true,
             speed: 0.05,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200
+            }
           },
           size: {
             value: 1,
