@@ -53,7 +53,7 @@ function Home2() {
             </p>
           </Col>
           <Col md={4} className="myAvtar">
-            <Tilt>
+            <Tilt scale={1.05}>
               <img src={myImg} className="img-fluid" alt="avatar" />
             </Tilt>
           </Col>
