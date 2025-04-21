@@ -43,7 +43,7 @@ export const ThemeProvider = ({ children }) => {
             : [`circle(0px at ${left + 40}px ${top + 20}px)`, `circle(${maxRadius}px at ${left + 40}px ${top + 20}px)`]
         },
         {
-          duration: 1000,
+          duration: 250,
           easing: isDark ? "ease-in" : "ease-in-out",
           pseudoElement: isDark ? "::view-transition-old(root)" : "::view-transition-new(root)"
         }

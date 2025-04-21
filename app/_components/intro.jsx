@@ -70,9 +70,9 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
       <Transition in key={theme} timeout={3000}>
         {({ visible, status }) => (
           <>
-            {/* {isHydrated && <DisplacementSphere />} */}
+            {isHydrated && <DisplacementSphere />}
             <header className="w-full relative max-w-[1024px] sm:max-w-[920px] md:max-w-[780px] -top-[var(--spaceL)] mobile:-top-[var(--space3XL)] mobileS:-top-[var(--spaceXL)] max-[820px]:max-h-[420px]:-top-[var(--spaceM)]">
-              <h2 className="text-black dark:text-blue-600">shiva</h2>
+              <h2 className="text-black dark:text-white text-5xl font-semibold">shiva</h2>
               {/* TODO:check */}
               <h1
                 className="uppercase text-[1.5rem] tracking-[0.3em] text-[var(--textLight)] mb-[var(--space2XL)] mt-0 font-[var(--fontWeightMedium)] leading-[1] opacity-0 transition-opacity duration-[var(--durationL)] ease-[var(--bezierFastoutSlowin)] delay-[200ms] laptop:text-[1.375rem] laptop:mb-[var(--spaceXL)] tablet:text-[1.125rem] mobile:mb-[var(--spaceL)] mobile:tracking-[0.2em] mobile:whitespace-nowrap mobile:overflow-hidden max-[820px]:max-h-[420px]:mb-[var(--spaceXL)]"
