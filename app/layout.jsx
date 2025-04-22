@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import withDynamicThemeContext from "@/hoc/theme";
-import config from "@/config.json";
+import { config } from "@/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +26,8 @@ function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="view-transition" content="same-origin" />
       </head>
-      <body className="h-screen w-screen overflow-hidden">
-        <div
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black font-[family-name:var(--font-geist-sans)] h-screen w-screen overflow-y-auto`}
-        >
-          {children}
-        </div>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased  font-[family-name:var(--font-geist-sans)] `}>
+        <div className="bg-white dark:bg-black">{children}</div>
       </body>
     </html>
   );
