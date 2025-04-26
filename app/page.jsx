@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 
 const About = dynamic(() => import("./_components/about"), { ssr: false });
 const Education = dynamic(() => import("./_components/education"), { ssr: false });
-const Tech = dynamic(() => import("./_components/Tech"), { ssr: false });
+const Tech = dynamic(() => import("./_components/technologies"), { ssr: false });
 const Projects = dynamic(() => import("./_components/projects"), { ssr: false });
 const Experience = dynamic(() => import("./_components/experience"), { ssr: false });
 
