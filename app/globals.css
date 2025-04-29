@@ -161,17 +161,3 @@
       rgba(153, 153, 161, 1) 25%,
       rgba(153, 153, 161, 1) 100%);
 }
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #171717;
-  border-radius: 15px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #171717;
-  border-radius: 15px;
-}

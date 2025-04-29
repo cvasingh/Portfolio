@@ -251,32 +251,32 @@ const projects = [
 
 const experiences = [
   {
-    title: "Senior Full Stack Engineer",
-    company_name: "GroupBWT",
+    title: "Senior Software Engineer",
+    company_name: "Univest.in",
     icon: coverhunt,
     iconBg: "#333333",
-    date: "Aug 2020 - May 2024"
+    date: "Aug 2022 - July 2025"
   },
   {
-    title: "Senior Blockchain Developer",
-    company_name: "Nimble AppGenie | Remote",
+    title: "Full-stack Developer",
+    company_name: "HexaHash Technologies",
     icon: microverse,
     iconBg: "#333333",
-    date: "Mar 2018 - Jun 2020"
+    date: "Mar 2022 - Sep 2022"
   },
   {
-    title: "Middle Software Engineer",
-    company_name: "Journi",
+    title: "Frontend Web Developer",
+    company_name: "Skillark Pvt Ltd ",
     icon: kelhel,
     iconBg: "#333333",
-    date: "Nov 2016 - Jan 2018"
+    date: "Jan 2022 - Apr 2022"
   },
   {
-    title: "Junior Full Stack Developer",
-    company_name: "Openxcell",
+    title: "Frontend Web Developer",
+    company_name: "The Sparks Foundation",
     icon: kelhel,
     iconBg: "#333333",
-    date: "May 2015 - Sep 2016"
+    date: "Jun 2021 - Jul 2021"
   }
 ];
 

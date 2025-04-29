@@ -8,6 +8,7 @@ const Education = dynamic(() => import("./_components/education"), { ssr: false 
 const Tech = dynamic(() => import("./_components/technologies"), { ssr: false });
 const Projects = dynamic(() => import("./_components/projects"), { ssr: false });
 const Experience = dynamic(() => import("./_components/experience"), { ssr: false });
+const Contact = dynamic(() => import("./_components/contact"), { ssr: false });
 
 export default function Home() {
   return (
@@ -41,19 +42,23 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="relative z-0 bg-[#0f0f0f]">
+        <Contact />
+      </div>
+
       <style>{`
 
 .bg-about{
-  linear-gradient(165deg, rgba(244,244,246,1) 100%, rgba(122,122,122,1) 100%)
+  background: linear-gradient(165deg, rgba(244,244,246,1) 100%, rgba(122,122,122,1) 100%)
 }
 .bg-experience{
-  linear-gradient(135deg, rgba(244,244,246,0.5) 60%, rgba(10,10,10,0.2) 100%),url(${whiteabstract.src})
+  background: linear-gradient(135deg, rgba(244,244,246,0.5) 60%, rgba(10,10,10,0.2) 100%),url('${whiteabstract.src}')
 }
 .bg-experienceLight{
-  linear-gradient(137deg, rgba(244,244,246,0.5) 60%, rgba(10,10,10,0.9) 60%)
+  background: linear-gradient(137deg, rgba(244,244,246,0.5) 60%, rgba(10,10,10,0.9) 60%)
 }
 .bg-tech{
-  linear-gradient(165deg, rgba(20,20,20,0.8) 100%, rgba(109,109,116,0.8) 100%), url(${nairobi.src})
+  background: linear-gradient(165deg, rgba(20,20,20,0.8) 100%, rgba(109,109,116,0.8) 100%), url(${nairobi.src})
 }
 `}</style>
     </div>

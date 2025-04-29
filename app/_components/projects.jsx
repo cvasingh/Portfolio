@@ -17,7 +17,7 @@ const ProjectCard = ({ id, name, description, image, repo, demo, index, active, 
       onClick={() => handleClick(id)}
     >
       <div
-        className="absolute top-0 left-0 z-10 bg-jetLight 
+        className="absolute top-0 left-0 z-10 bg-[#292929]
       h-full w-full opacity-[0.5] rounded-[24px]"
       ></div>
 
@@ -60,7 +60,7 @@ const ProjectCard = ({ id, name, description, image, repo, demo, index, active, 
               whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px] 
               w-[125px] h-[46px] rounded-[10px] glassmorphism 
               sm:mt-[22px] mt-[16px] hover:bg-[#858585] 
-              hover:text-eerieBlack transition duration-[0.2s] 
+              hover:text-[#1f1f1f] transition duration-[0.2s] 
               ease-in-out"
               onClick={() => window.open(demo, "_blank")}
               onMouseOver={() => {
@@ -91,14 +91,16 @@ const Projects = () => {
   return (
     <div className="-mt-[6rem]">
       <motion.div variants={textVariant()}>
-        <p className="sm:text-[18px] text-[16px] text-taupe uppercase tracking-wider font-semibold font-poppins">Case Studies</p>
+        <p className="sm:text-[18px] text-[16px] text-[#9999a1] uppercase tracking-wider font-semibold font-poppins">
+          Case Studies
+        </p>
         <h2 className="text-timberWolf font-black md:text-[60px] sm:text-[48px] xs:text-[40px] text-[30px] font-poppins">
           Projects
         </h2>
       </motion.div>
 
       <div className="w-full flex">
-        <motion.p variants={fadeIn("", "", 0.1, 1)} className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]">
+        <motion.p variants={fadeIn("", "", 0.1, 1)} className="mt-4 text-[#9999a1] text-[18px] max-w-3xl leading-[30px]">
           These projects demonstrate my expertise with practical examples of some of my work, including brief descriptions and
           links to code repositories and live demos. They showcase my ability to tackle intricate challenges, adapt to various
           technologies, and efficiently oversee projects.
