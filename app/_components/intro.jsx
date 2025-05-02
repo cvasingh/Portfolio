@@ -1,8 +1,8 @@
 "use client";
-// import DecoderText from "@/components/decoder-text";
+import DecoderText from "@/components/decoder-text";
 // import Heading from "@/components/heading";
 import Section from "@/components/section";
-// import Transition from "@/components/transition";
+import Transition from "@/components/transition";
 // import VisuallyHidden from "@/components/visually-hidden";
 import { useInterval, usePrevious, useScrollToHash } from "@/hooks";
 import { useEffect, useState } from "react";
@@ -12,6 +12,8 @@ import dynamic from "next/dynamic";
 import { useTheme } from "@/context/theme-provider";
 import { config } from "@/constants";
 import Hero from "./hero";
+import VisuallyHidden from "@/components/visually-hidden";
+import { cssProps } from "@/utils/lib";
 
 const DisplacementSphere = dynamic(() =>
   import("./displacement-sphere").then((module) => ({
@@ -61,53 +63,40 @@ export default function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }
       tabIndex={-1}
       {...rest}
     >
-      <button
-        ref={switchRef}
-        className="text-black dark:text-white text-xl font-bold fixed top-6 right-6 z-20 p-2 cursor-pointer"
-        onClick={toggleTheme}
-      >
-        {theme === "light" ? "Dark" : "Light"}
-      </button>
-      {/* <Transition in key={theme} timeout={3000}>
+      <Transition in key={theme} timeout={3000}>
         {({ visible, status }) => (
-          <> */}
-      {isHydrated && <DisplacementSphere />}
-
-      <Hero introLabel={introLabel} titleId={titleId} />
-      {/* <Heading level={0} as="h2" className="leading-2">
-                <VisuallyHidden>{`${config.role} + ${introLabel}`}</VisuallyHidden>
-                <span
-                  aria-hidden
-                  className="flex flex-row items-center relative data-[hidden=true]:opacity-0"
-                >
-                  <span
-                    className="relative flex-shrink-0 items-center leading-[1] animate-[introTextReveal_1.5s_var(--bezierFastoutSlowin)_forwards] text-[color-mix(in_lab,_var(--text)_0%,_transparent)] transition-opacity duration-[0.5s] ease delay-[var(--durationM)]"
-                    data-status={status}
-                    style={{ animationDelay: "200ms" }}
-                  >
+          <>
+            <button
+              ref={switchRef}
+              className="text-black dark:text-white text-xl font-bold fixed top-6 right-6 z-20 p-2 cursor-pointer"
+              onClick={toggleTheme}
+            >
+              {theme === "light" ? "Dark" : "Light"}
+            </button>
+            {/* {isHydrated && <DisplacementSphere />} */}
+            <header className="main-hero-text">
+              <h1 className="main-hero-name" data-visible={visible} id={titleId}>
+                <DecoderText text={config.name} delay={500} />
+              </h1>
+              <h2 className="text-black dark:text-white text-5xl font-semibold [letter-spacing:-0.03em]">
+                <VisuallyHidden className={""}>{`${config.role} + ${introLabel}`}</VisuallyHidden>
+                <span aria-hidden className="main-hero-row ">
+                  <span className="main-hero-word" data-status={status} style={cssProps({ delay: "200ms" })}>
                     {config.role}
                   </span>
-                  <span
-                    className="h-[2px] bg-[color-mix(in_lab,var(--text)_30%,transparent)] w-[120%] ml-[20px] relative top-[0.05em] transition-all duration-[0.8s] delay-[1s] ease-[var(--bezierFastoutSlowin)] scale-x-0 data-[status='entered']:scale-x-100 data-[status='entered']:opacity-100"
-                    data-status={status}
-                  />
+                  <span className="main-hero-line" data-status={status} />
                 </span>
-                <div className="flex flex-row items-center relative">
+                <div className="main-hero-row ">
                   {disciplines.map((item) => (
-                    <Transition
-                      unmount
-                      in={item === currentDiscipline}
-                      timeout={{ enter: 3000, exit: 2000 }}
-                      key={item}
-                    >
+                    <Transition unmount in={item === currentDiscipline} timeout={{ enter: 3000, exit: 2000 }} key={item}>
                       {({ status, nodeRef }) => (
                         <span
                           aria-hidden
                           ref={nodeRef}
-                          className="relative flex items-center leading-[1] opacity-0 transition-opacity duration-500 ease-in-out"
+                          className="main-hero-word"
                           data-plus={true}
                           data-status={status}
-                          style={{ animationDelay: "600ms" }}
+                          style={cssProps({ delay: "600ms" })}
                         >
                           {item}
                         </span>
@@ -115,31 +104,33 @@ export default function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }
                     </Transition>
                   ))}
                 </div>
-              </Heading> 
-        <Link
-          href="/#project-1"
-          className="fixed bottom-16 w-[26px] h-[38px] border-2 border-[color-mix(in_lab,var(--text)_40%,transparent)] rounded-[20px] opacity-0 transition-opacity duration-[var(--durationL)] ease-in-out data-[status='entered']:opacity-100 data-[hidden='true']:opacity-0 data-[hidden='true']:translate-y-[20px] focus-visible:opacity-100 hidden sm:block"
-          data-status={status}
-          data-hidden={scrollIndicatorHidden}
-          onClick={handleScrollClick}
-        >
-          <VisuallyHidden>Scroll to projects</VisuallyHidden>
-        </Link>
-        <Link
-          href="/#project-1"
-          className="fixed bottom-0 opacity-0 transition-opacity duration-[var(--durationM)] ease-[cubic-bezier(0.8,0.1,0.27,1)] px-5 py-5 data-[status='entered']:opacity-100 data-[hidden='true']:opacity-0 data-[hidden='true']:translate-y-0 sm:hidden"
-          data-status={status}
-          data-hidden={scrollIndicatorHidden}
-          onClick={handleScrollClick}
-        >
-          <VisuallyHidden>Scroll to projects</VisuallyHidden>
-          <svg aria-hidden stroke="currentColor" width="43" height="15" viewBox="0 0 43 15">
-            <path d="M1 1l20.5 12L42 1" strokeWidth="2" fill="none" />
-          </svg>
-        </Link>
-      </>
+              </h2>
+            </header>
+
+            <Link
+              href="/#project-1"
+              className="scrollIndicator"
+              data-status={status}
+              data-hidden={scrollIndicatorHidden}
+              onClick={handleScrollClick}
+            >
+              <VisuallyHidden>Scroll to projects</VisuallyHidden>
+            </Link>
+            <Link
+              href="/#project-1"
+              className="mobileScrollIndicator"
+              data-status={status}
+              data-hidden={scrollIndicatorHidden}
+              onClick={handleScrollClick}
+            >
+              <VisuallyHidden>Scroll to projects</VisuallyHidden>
+              <svg aria-hidden stroke="currentColor" width="43" height="15" viewBox="0 0 43 15">
+                <path d="M1 1l20.5 12L42 1" strokeWidth="2" fill="none" />
+              </svg>
+            </Link>
+          </>
         )}
-      </Transition> */}
+      </Transition>
     </Section>
   );
 }

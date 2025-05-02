@@ -28,3 +28,29 @@ export function cn(...inputs) {
 export async function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+export function cssProps(props, style = {}) {
+  let result = {};
+
+  const keys = Object.keys(props);
+
+  for (const key of keys) {
+    let value = props[key];
+
+    if (typeof value === "number" && key === "delay") {
+      value = numToMs(value);
+    }
+
+    if (typeof value === "number" && key !== "opacity") {
+      value = numToPx(value);
+    }
+
+    if (typeof value === "number" && key === "opacity") {
+      value = `${value * 100}%`;
+    }
+
+    result[`--${key}`] = value;
+  }
+
+  return { ...result, ...style };
+}
