@@ -25,14 +25,12 @@
   --foreground: #ededed;
 } */
 
-/* main hero section  */
-
 :root {
-  --accent: 'oklch(84.42% 0.19 202.24)',
-    --text: 'var(--white)',
+  --accent: oklch(84.42% 0.19 202.24);
+   --text: var(--text-white);
     --systemFontStack:
     'system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif';
-     --fontStack: `Gotham, var(--systemFontStack)`;
+     --fontStack: Gotham, var(--systemFontStack);
      --monoFontStack:
     'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace';
      --japaneseFontStack:
@@ -40,6 +38,7 @@
     
 }
 
+/* main hero section  */
 .main-hero-text {
   max-width: 1024px;
   width: 100%;
@@ -176,9 +175,6 @@
       &::after {
         animation-name: reveal;
       }
-      /* &::after:global {
-        animation-name: reveal;
-      } */
     }
   }
 
@@ -401,23 +397,6 @@
   }
 }
 
-
-@keyframes introScrollIndicator {
-  0% {
-    transform: translate3d(-1px, 0, 0);
-    opacity: 0;
-  }
-
-  20% {
-    transform: translate3d(-1px, 0, 0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate3d(-1px, 8px, 0);
-    opacity: 0;
-  }
-}
 
 /* decoder-text- */
 .decoder-text-text {

@@ -73,9 +73,9 @@ export default function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }
             >
               {theme === "light" ? "Dark" : "Light"}
             </button>
-            {/* {isHydrated && <DisplacementSphere />} */}
+            {isHydrated && <DisplacementSphere />}
             <header className="main-hero-text">
-              <h1 className="main-hero-name" data-visible={visible} id={titleId}>
+              <h1 className="main-hero-name " data-visible={visible} id={titleId}>
                 <DecoderText text={config.name} delay={500} />
               </h1>
               <h2 className="text-black dark:text-white text-5xl font-semibold [letter-spacing:-0.03em]">
