@@ -461,7 +461,7 @@ const Device = ({ renderer, model, modelGroup, renderFrame, index, showDelay, se
 
       return { loadFullResTexture, playAnimation };
     };
-    load();
+
     setLoadDevice({ start: load });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -59,7 +59,8 @@ const Home = () => {
             const section = entry.target;
             observer.unobserve(section);
             if (visibleSections.includes(section)) return;
-            setVisibleSections((prevSections) => [...prevSections, section]);
+            // setVisibleSections((prevSections) => [...prevSections, section]);
+            setVisibleSections((prev) => [...prev, entry.target]);
           }
         });
       },
@@ -74,7 +75,9 @@ const Home = () => {
     );
 
     sections.forEach((section) => {
-      sectionObserver.observe(section.current);
+      if (section.current) {
+        sectionObserver.observe(section.current);
+      }
     });
 
     indicatorObserver.observe(intro.current);
@@ -102,8 +105,8 @@ const Home = () => {
           alt: "Smart Sparrow lesson builder",
           textures: [
             {
-              srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
-              placeholder: sprTexturePlaceholder
+              srcSet: `${sprTexture.src} 1280w, ${sprTextureLarge.src} 2560w`,
+              placeholder: sprTexturePlaceholder.src
             }
           ]
         }}

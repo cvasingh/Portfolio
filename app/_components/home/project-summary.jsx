@@ -75,9 +75,9 @@ function ProjectSummary({
             {indexText}
           </span>
         </div>
-        <h3 as="h2" className={"project-summary-title text-3xl font-bold"} data-visible={visible} id={titleId}>
+        <h2 className={"project-summary-title text-3xl font-bold"} data-visible={visible} id={titleId}>
           {title}
-        </h3>
+        </h2>
         <p className={"project-summary-description"} data-visible={visible}>
           {description}
         </p>
@@ -99,24 +99,22 @@ function ProjectSummary({
             <div className={"project-summary-model"} data-device="laptop">
               {!modelLoaded && <Loader center className={"project-summary-loader"} data-visible={visible} />}
               {isHydrated && visible && (
-                <Suspense>
-                  <Model
-                    alt={model.alt}
-                    cameraPosition={{ x: 0, y: 0, z: 8 }}
-                    showDelay={700}
-                    onLoad={handleModelLoad}
-                    show={visible}
-                    models={[
-                      {
-                        ...deviceModels.laptop,
-                        texture: {
-                          ...model.textures[0],
-                          sizes: laptopSizes
-                        }
+                <Model
+                  alt={model.alt}
+                  cameraPosition={{ x: 0, y: 0, z: 8 }}
+                  showDelay={700}
+                  onLoad={handleModelLoad}
+                  show={visible}
+                  models={[
+                    {
+                      ...deviceModels.laptop,
+                      texture: {
+                        ...model.textures[0],
+                        sizes: laptopSizes
                       }
-                    ]}
-                  />
-                </Suspense>
+                    }
+                  ]}
+                />
               )}
             </div>
           </>
@@ -127,33 +125,31 @@ function ProjectSummary({
             <div className={"project-summary-model"} data-device="phone">
               {!modelLoaded && <Loader center className={"project-summary-loader"} data-visible={visible} />}
               {isHydrated && visible && (
-                <Suspense>
-                  <Model
-                    alt={model.alt}
-                    cameraPosition={{ x: 0, y: 0, z: 11.5 }}
-                    showDelay={300}
-                    onLoad={handleModelLoad}
-                    show={visible}
-                    models={[
-                      {
-                        ...deviceModels.phone,
-                        position: { x: -0.6, y: 1.1, z: 0 },
-                        texture: {
-                          ...model.textures[0],
-                          sizes: phoneSizes
-                        }
-                      },
-                      {
-                        ...deviceModels.phone,
-                        position: { x: 0.6, y: -0.5, z: 0.3 },
-                        texture: {
-                          ...model.textures[1],
-                          sizes: phoneSizes
-                        }
+                <Model
+                  alt={model.alt}
+                  cameraPosition={{ x: 0, y: 0, z: 11.5 }}
+                  showDelay={300}
+                  onLoad={handleModelLoad}
+                  show={visible}
+                  models={[
+                    {
+                      ...deviceModels.phone,
+                      position: { x: -0.6, y: 1.1, z: 0 },
+                      texture: {
+                        ...model.textures[0],
+                        sizes: phoneSizes
                       }
-                    ]}
-                  />
-                </Suspense>
+                    },
+                    {
+                      ...deviceModels.phone,
+                      position: { x: 0.6, y: -0.5, z: 0.3 },
+                      texture: {
+                        ...model.textures[1],
+                        sizes: phoneSizes
+                      }
+                    }
+                  ]}
+                />
               )}
             </div>
           </>
