@@ -11,7 +11,6 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useTheme } from "@/context/theme-provider";
 import { config } from "@/constants";
-import Hero from "./hero";
 import VisuallyHidden from "@/components/visually-hidden";
 import { cssProps } from "@/utils/lib";
 

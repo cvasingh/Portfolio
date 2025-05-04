@@ -1,6 +1,6 @@
 "use client";
 import { nairobi, whiteabstract } from "@/assets";
-import Intro from "./_components/intro";
+import Home from "./_components/home";
 import dynamic from "next/dynamic";
 
 const About = dynamic(() => import("./_components/about"), { ssr: false });
@@ -10,10 +10,10 @@ const Projects = dynamic(() => import("./_components/projects"), { ssr: false })
 const Experience = dynamic(() => import("./_components/experience"), { ssr: false });
 const Contact = dynamic(() => import("./_components/contact"), { ssr: false });
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="">
-      <Intro />
+      <Home />
       <div className="bg-about bg-cover bg-center bg-no-repeat">
         <About />
       </div>
