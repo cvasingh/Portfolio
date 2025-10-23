@@ -143,12 +143,12 @@ const technologies = [
 const projects = [
   {
     id: "project-1",
-    name: "AppStudio",
+    name: "E-Commerce Platform",
     description:
-      "Canada’s best minds under one roof. The architects of a digital tomorrow, united under the banner of AppStudio.",
+      "A full-stack e-commerce platform built with Next.js, featuring user authentication, payment integration, and inventory management.",
     tags: [
       {
-        name: "react",
+        name: "nextjs",
         color: "blue-text-gradient"
       },
       {
@@ -161,40 +161,42 @@ const projects = [
       }
     ],
     image: komikult,
-    demo: "https://www.appstudio.ca/"
+    demo: "https://github.com/cvasingh",
+    repo: "https://github.com/cvasingh"
   },
   {
     id: "project-2",
-    name: "Sports Betting",
-    description: "It is a sports betting site where various players can compete against each other.",
+    name: "Task Management App",
+    description: "A collaborative task management application with real-time updates and team collaboration features.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient"
       },
       {
-        name: "restapi",
+        name: "nodejs",
         color: "green-text-gradient"
       },
       {
-        name: "scss",
+        name: "postgresql",
         color: "pink-text-gradient"
       }
     ],
     image: leaderboard,
-    demo: "https://sportsbet.io"
+    demo: "https://github.com/cvasingh",
+    repo: "https://github.com/cvasingh"
   },
   {
     id: "project-3",
-    name: "Live Betting",
-    description: "It is a live sports betting site where various players can compete against each other.",
+    name: "Weather Dashboard",
+    description: "A responsive weather dashboard with interactive maps and detailed forecasts using external APIs.",
     tags: [
       {
-        name: "nextjs",
+        name: "javascript",
         color: "blue-text-gradient"
       },
       {
-        name: "supabase",
+        name: "api",
         color: "green-text-gradient"
       },
       {
@@ -203,49 +205,52 @@ const projects = [
       }
     ],
     image: math,
-    demo: "https://www.livebet.com/"
+    demo: "https://github.com/cvasingh",
+    repo: "https://github.com/cvasingh"
   },
   {
     id: "project-4",
-    name: "Toyota",
-    description: `Call Booking Website`,
+    name: "Portfolio Website",
+    description: "A modern portfolio website built with Next.js, Three.js, and advanced animations.",
     tags: [
       {
         name: "nextjs",
         color: "blue-text-gradient"
       },
       {
-        name: "supabase",
+        name: "threejs",
         color: "green-text-gradient"
       },
       {
-        name: "css",
+        name: "framer-motion",
         color: "pink-text-gradient"
       }
     ],
     image: movie,
-    demo: "https://www.toyota.com"
+    demo: "https://github.com/cvasingh/portfolio",
+    repo: "https://github.com/cvasingh/portfolio"
   },
   {
     id: "project-5",
-    name: "venice ai",
-    description: "This is a AI Chat Platform.",
+    name: "AI Chat Application",
+    description: "An intelligent chat application with natural language processing and real-time messaging.",
     tags: [
       {
-        name: "nextjs",
+        name: "react",
         color: "blue-text-gradient"
       },
       {
-        name: "supabase",
+        name: "ai",
         color: "green-text-gradient"
       },
       {
-        name: "css",
+        name: "websockets",
         color: "pink-text-gradient"
       }
     ],
     image: nyeusi,
-    demo: "https://venice.ai/"
+    demo: "https://github.com/cvasingh",
+    repo: "https://github.com/cvasingh"
   }
 ];
 

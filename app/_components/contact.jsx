@@ -35,16 +35,16 @@ const Contact = () => {
     } else {
       emailjs
         .send(
-          "service_fdvk2u9",
-          "template_s1hxzrb",
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_fdvk2u9",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_s1hxzrb",
           {
             from_name: form.name,
-            to_name: "Cool Job",
+            to_name: "Shiva Singh",
             from_email: form.email,
-            to_email: "devmmy1031@gmail.com",
+            to_email: process.env.NEXT_PUBLIC_EMAILJS_TO_EMAIL || "devmmy1031@gmail.com",
             message: form.message
           },
-          "v3CCyUs9ikygrF7IB"
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "v3CCyUs9ikygrF7IB"
         )
         .then(
           () => {

@@ -19,7 +19,6 @@ import { cleanRenderer, cleanScene, removeLights } from "@/utils/three";
 import fragmentShader from "./displacement-sphere-fragment.glsl?raw";
 import vertexShader from "./displacement-sphere-vertex.glsl?raw";
 import { media, throttle } from "@/utils/lib";
-import { useTheme } from "@/context/theme-provider";
 
 const springConfig = {
   stiffness: 30,
@@ -28,7 +27,6 @@ const springConfig = {
 };
 
 export const DisplacementSphere = (props) => {
-  const { theme } = useTheme();
   const start = useRef(Date.now());
   const canvasRef = useRef();
   const mouse = useRef();
@@ -89,8 +87,8 @@ export const DisplacementSphere = (props) => {
   }, []);
 
   useEffect(() => {
-    const dirLight = new DirectionalLight(0xffffff, theme === "light" ? 1.8 : 2.0);
-    const ambientLight = new AmbientLight(0xffffff, theme === "light" ? 2.7 : 0.4);
+    const dirLight = new DirectionalLight(0xffffff, 1.8);
+    const ambientLight = new AmbientLight(0xffffff, 2.7);
 
     dirLight.position.z = 200;
     dirLight.position.x = 100;
@@ -102,7 +100,7 @@ export const DisplacementSphere = (props) => {
     return () => {
       removeLights(lights.current);
     };
-  }, [theme]);
+  }, []);
 
   useEffect(() => {
     const { width, height } = windowSize;

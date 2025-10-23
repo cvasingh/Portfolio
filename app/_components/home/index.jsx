@@ -89,7 +89,7 @@ const Home = () => {
   }, [visibleSections]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden">
       <Intro id="intro" sectionRef={intro} scrollIndicatorHidden={scrollIndicatorHidden} />
       <ProjectSummary
         id="project-1"

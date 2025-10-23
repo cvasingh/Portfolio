@@ -1,15 +1,12 @@
 "use client";
 import DecoderText from "@/components/decoder-text";
-// import Heading from "@/components/heading";
 import Section from "@/components/section";
 import Transition from "@/components/transition";
-// import VisuallyHidden from "@/components/visually-hidden";
-import { useInterval, usePrevious, useScrollToHash } from "@/hooks";
+import { useInterval, useScrollToHash } from "@/hooks";
 import { useEffect, useState } from "react";
 import { useHydrated } from "@/hooks/useHydrated";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { useTheme } from "@/context/theme-provider";
 import { config } from "@/constants";
 import VisuallyHidden from "@/components/visually-hidden";
 import { cssProps } from "@/utils/lib";
@@ -21,10 +18,8 @@ const DisplacementSphere = dynamic(() =>
 );
 
 export default function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
-  const { switchRef, theme, toggleTheme } = useTheme();
   const { disciplines } = config;
   const [disciplineIndex, setDisciplineIndex] = useState(0);
-  const prevTheme = usePrevious(theme);
 
   const introLabel = [disciplines.slice(0, -1).join(", "), disciplines.slice(-1)[0]].join(", and ");
   const currentDiscipline = disciplines.find((item, index) => index === disciplineIndex);
@@ -37,15 +32,8 @@ export default function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }
       const index = (disciplineIndex + 1) % disciplines.length;
       setDisciplineIndex(index);
     },
-    5000,
-    theme
+    5000
   );
-
-  useEffect(() => {
-    if (prevTheme && prevTheme !== theme) {
-      setDisciplineIndex(0);
-    }
-  }, [theme, prevTheme]);
 
   const handleScrollClick = (event) => {
     event.preventDefault();
@@ -62,22 +50,23 @@ export default function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }
       tabIndex={-1}
       {...rest}
     >
-      <Transition in key={theme} timeout={3000}>
+      <Transition in timeout={3000}>
         {({ visible, status }) => (
           <>
-            <button
-              ref={switchRef}
-              className="text-black dark:text-white text-xl font-bold fixed top-6 right-6 z-20 p-2 cursor-pointer"
-              onClick={toggleTheme}
+            {/* Theme Demo Link */}
+            <Link
+              href="/theme-demo"
+              className="text-black text-lg font-medium fixed top-6 right-6 z-20 p-3 bg-white/80 backdrop-blur-sm rounded-lg border border-gray-200 hover:bg-white hover:shadow-lg transition-all"
             >
-              {theme === "light" ? "Dark" : "Light"}
-            </button>
-            {/* {isHydrated && <DisplacementSphere />} */}
+              🎨 Theme Demo
+            </Link>
+
+            {isHydrated && <DisplacementSphere />}
             <header className="main-hero-text">
               <h1 className="main-hero-name " data-visible={visible} id={titleId}>
                 <DecoderText text={config.name} delay={500} />
               </h1>
-              <h2 className="text-black dark:text-white text-5xl font-semibold [letter-spacing:-0.03em]">
+              <h2 className="text-black text-5xl font-semibold [letter-spacing:-0.03em]">
                 <VisuallyHidden className={""}>{`${config.role} + ${introLabel}`}</VisuallyHidden>
                 <span aria-hidden className="main-hero-row ">
                   <span className="main-hero-word" data-status={status} style={cssProps({ delay: "200ms" })}>

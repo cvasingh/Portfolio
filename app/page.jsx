@@ -12,7 +12,7 @@ const Contact = dynamic(() => import("./_components/contact"), { ssr: false });
 
 export default function Page() {
   return (
-    <div className="">
+    <>
       <Home />
       <div className="bg-about bg-cover bg-center bg-no-repeat">
         <About />
@@ -61,6 +61,6 @@ export default function Page() {
   background: linear-gradient(165deg, rgba(20,20,20,0.8) 100%, rgba(109,109,116,0.8) 100%), url(${nairobi.src})
 }
 `}</style>
-    </div>
+    </>
   );
 }

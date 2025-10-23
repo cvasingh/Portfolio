@@ -33,18 +33,15 @@ const About = () => {
         <p className="sm:text-[18px] text-[16px] text-[#9999a1] uppercase tracking-wider font-semibold font-poppins">
           Introduction
         </p>
-        <h2 className="text-[#1f1f1f] dark:text-[#9999a1] font-black md:text-[60px] sm:text-[48px] xs:text-[40px] text-[30px] font-poppins">
+        <h2 className="text-[#1f1f1f] font-black md:text-[60px] sm:text-[48px] xs:text-[40px] text-[30px] font-poppins">
           Overview
         </h2>
       </motion.div>
 
       <motion.p variants={fadeIn("", "", 0.1, 1)} className="mt-4 text-[#9999a1] text-[18px] max-w-3xl leading-[30px]">
-        Aute officia quis sit est do proident labore. Nisi elit consequat aliqua Lorem do quis fugiat deserunt consequat ullamco.
-        Veniam eiusmod laboris officia minim ullamco. Velit amet irure elit est sint est et. Labore consequat laborum nisi nisi
-        consequat tempor cillum officia sit veniam veniam anim deserunt. Quis id nisi ullamco pariatur minim reprehenderit labore.
-        Aute officia quis sit est do proident labore. Nisi elit consequat aliqua Lorem do quis fugiat deserunt consequat ullamco.
-        Veniam eiusmod laboris officia minim ullamco. Velit amet irure elit est sint est et. Labore consequat laborum nisi nisi
-        consequat tempor cillum officia sit veniam veniam anim deserunt. Quis id nisi ullamco pariatur minim reprehenderit labore.
+        I'm a skilled software developer with experience in TypeScript, JavaScript, and expertise in frameworks like React,
+        Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable,
+        and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
 
       <div className="mt-20 flex gap-10">
