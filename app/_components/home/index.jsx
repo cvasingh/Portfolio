@@ -91,7 +91,7 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       <Intro id="intro" sectionRef={intro} scrollIndicatorHidden={scrollIndicatorHidden} />
-      <ProjectSummary
+      {/* <ProjectSummary
         id="project-1"
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
@@ -110,7 +110,7 @@ const Home = () => {
             }
           ]
         }}
-      />
+      /> */}
       {/* <ProjectSummary
         id="project-2"
         alternate

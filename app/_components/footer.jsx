@@ -1,23 +1,18 @@
-// import { Link } from '~/components/link';
-// import { Text } from '~/components/text';
-// import { classes } from '~/utils/style';
-// import config from '~/config.json';
-// import styles from './footer.module.css';
 
-// export const Footer = ({ className }) => (
-//   <footer className={classes(styles.footer, className)}>
-//     <Text size="s" align="center">
-//       <span className={styles.date}>
-//         {`© ${new Date().getFullYear()} ${config.name}.`}
-//       </span>
-//       <Link secondary className={styles.link} href="/humans.txt" target="_self">
-//         Crafted by yours truly
-//       </Link>
-//     </Text>
-//   </footer>
-// );
-import React from "react";
+import { config } from '@/constants';
+import Link from 'next/link';
 
-export default function Footer() {
-  return <div>Footer</div>;
-}
+const Footer = ({ className }) => (
+  <footer className={""}>
+    <p className='text-center'>
+      <span className="">
+        {`© ${new Date().getFullYear()} ${config.name}.`}
+      </span>
+      <Link className='' href="/humans.txt" target="_self">
+        {' '}Made with ♥︎ by humans.
+      </Link>
+    </p>
+  </footer>
+);
+
+export default Footer;
